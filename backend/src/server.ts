@@ -5,6 +5,7 @@ import connectDB from './config/database';
 import userRoutes from './routes/userRoutes';
 import itemRoutes from './routes/itemRoutes';
 import rentalRoutes from './routes/rentalRoutes';
+import { errorHandler } from './middleware/errorHandler';
 
 dotenv.config();
 
@@ -30,6 +31,9 @@ app.get('/health', (_req: Request, res: Response) => {
 app.use((_req: Request, res: Response) => {
   res.status(404).json({ message: 'Route not found' });
 });
+
+// Error handler (must be last)
+app.use(errorHandler);
 
 // Start server
 const startServer = async () => {
