@@ -1,0 +1,19 @@
+### Health Check
+GET http://localhost:5000/health
+
+### Register User
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Prabal Thool",
+  "email": "prabal@renthub.com",
+  "password": "secure123",
+  "phone": "9876543210"
+}
+
+### Get All Items
+GET http://localhost:5000/api/items
+
+### Search Items
+GET http://localhost:5000/api/items?search=camera&city=Mumbai
